@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GANHeP – Ghana Adventist Natural Health Practitioners</title>
+<meta name="description" content="Ghana Adventist Natural Health Practitioners (GANHeP): a fellowship of health professionals promoting whole-person healing.">
+<style>
+:root{--navy:#0f2d57;--blue:#16407a;--gold:#c8a22c;--green:#2e7d4f;--bg:#f5f7fb;--tx:#1b2438;--mut:#5d6a85;--bd:#d7dde9}
+*{box-sizing:border-box}html,body{margin:0}body{font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--tx);background:var(--bg)}
+a{color:var(--blue)}.wrap{max-width:1040px;margin:auto;padding:0 16px}
+.top{background:var(--navy);color:#fff;font-size:13px;padding:6px 0}.top .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
+header{background:#fff;border-bottom:4px solid var(--gold);position:sticky;top:0;z-index:10}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;max-width:1040px;margin:auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}.brand svg{width:54px;height:54px;flex:none}
+.brand b{font-size:22px;letter-spacing:1px;display:block;line-height:1.1}.brand span{font-size:11px;color:var(--mut);display:block;max-width:190px;line-height:1.2}
+nav{display:flex;gap:2px;flex-wrap:wrap}nav a{padding:8px 11px;border-radius:6px;text-decoration:none;color:var(--navy);font-weight:600;font-size:14px}
+nav a:hover{background:var(--bg)}nav a.on{background:var(--navy);color:#fff}nav a.join{background:var(--gold);color:#1b1b1b}
+#mb{display:none;background:var(--navy);color:#fff;border:0;border-radius:6px;padding:8px 12px;font-size:20px}
+@media(max-width:860px){#mb{display:block}nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;padding:10px 16px;border-bottom:4px solid var(--gold)}nav.open{display:flex}}
+section.pg{display:none;padding:28px 0 50px}section.pg.on{display:block}
+.hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:54px 0;border-bottom:6px solid var(--gold)}
+.hero h1{font-size:clamp(26px,5vw,42px);margin:0 0 10px}.hero p{max-width:620px;font-size:18px;opacity:.95}
+.btn{display:inline-block;background:var(--gold);color:#1b1b1b;border:0;border-radius:8px;padding:11px 20px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;margin:4px 6px 4px 0}.btn.o{background:transparent;border:2px solid #fff;color:#fff}.btn.b{background:var(--blue);color:#fff}
+h2{color:var(--navy);margin:0 0 6px}h2::after{content:"";display:block;width:56px;height:4px;background:var(--gold);margin-top:6px}
+h3{color:var(--blue);margin:0 0 8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:16px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:18px}.ph{color:var(--mut);font-style:italic}
+.av{width:72px;height:72px;border-radius:50%;background:var(--bd);margin-bottom:10px;display:grid;place-items:center;color:var(--mut);font-size:28px}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:12px}
+label{font-size:14px;font-weight:600;display:block}label i{color:#b3261e;font-style:normal}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--bd);border-radius:8px;font:inherit;margin-top:4px;background:#fff;color:var(--tx)}
+.err{color:#b3261e;font-size:12px}.bad{border-color:#b3261e!important}.note{background:#fff8e1;border-left:4px solid var(--gold);padding:10px 14px;border-radius:6px;font-size:14px}
+footer{background:var(--navy);color:#dbe4f5;padding:28px 0;font-size:14px}footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between}footer a{color:#fff}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><symbol id="logo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="#0f2d57" stroke="#c8a22c" stroke-width="4"/><path d="M20 62c10-6 22-6 30 0 8-6 20-6 30 0v6c-10-5-22-5-30 1-8-6-20-6-30-1z" fill="#fff"/><path d="M50 62V38" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M50 52c-14 0-20-9-20-18 12 0 20 6 20 18z" fill="#3fa56a"/><path d="M50 44c11 0 17-7 17-15-10 0-17 5-17 15z" fill="#2e7d4f"/><circle cx="50" cy="22" r="4" fill="#c8a22c"/></symbol></svg>
+<div class="top"><div class="wrap"><span>Whole-person healing · Service · Fellowship</span><a href="/admin.html" style="color:#fff;opacity:.7">Admin login</a></div></div>
+<header><div class="hd"><a class="brand" href="#home"><svg><use href="#logo"/></svg><div><b>GANHeP</b><span>Ghana Adventist Natural Health Practitioners</span></div></a>
+<button id="mb" aria-label="Menu">☰</button>
+<nav id="nav"><a href="#home">Home</a><a href="#about">About</a><a href="#leadership">Leadership</a><a href="#programmes">Programmes</a><a href="#news">News &amp; Events</a><a href="#resources">Resources</a><a href="#contact">Contact</a><a href="#join" class="join">Join GANHeP</a></nav></div></header>
+
+<section class="pg on" id="home"><div class="hero"><div class="wrap"><h1>Healing the whole person</h1><p>GANHeP brings together Adventist natural health practitioners across Ghana to serve our communities with skill, compassion and faith.</p><a class="btn" href="#join">Become a member</a><a class="btn o" href="#about">Learn more</a></div></div>
+<div class="wrap"><div class="grid"><div class="card"><h3>Our mission</h3><p id="c-mission"></p></div><div class="card"><h3>Our vision</h3><p id="c-vision"></p></div><div class="card"><h3>Core values</h3><p>Integrity, compassion, professional excellence and service, in harmony with the Adventist health message.</p></div></div>
+<h2 style="margin-top:34px">The eight natural remedies</h2><div class="grid"><div class="card">🥗 Nutrition</div><div class="card">🏃 Exercise</div><div class="card">💧 Water</div><div class="card">☀️ Sunlight</div><div class="card">🚭 Temperance</div><div class="card">🌬️ Fresh air</div><div class="card">😴 Rest</div><div class="card">🙏 Trust in divine power</div></div></div></section>
+
+<section class="pg" id="about"><div class="wrap"><h2>About GANHeP</h2><div id="c-about"></div></div></section>
+
+<section class="pg" id="leadership"><div class="wrap"><h2>Leadership</h2><p>Meet the executives serving GANHeP.</p><div id="c-leadership"></div></div></section>
+
+<section class="pg" id="programmes"><div class="wrap"><h2>Programmes &amp; Services</h2><div id="c-programmes"></div></div></section>
+
+<section class="pg" id="news"><div class="wrap"><h2>News &amp; Events</h2><div id="c-news"></div></div></section>
+
+<section class="pg" id="resources"><div class="wrap"><h2>Resources</h2><div id="c-resources"></div></div></section>
+
+<section class="pg" id="contact"><div class="wrap"><h2>Contact us</h2><div class="grid"><div class="card"><h3>Reach us</h3><p id="c-contact"></p></div>
+<div class="card"><h3>Send a message</h3><form id="cf" novalidate><label>Name<input name="n"></label><label>Email<input name="e" type="email"></label><label>Message<textarea name="m" rows="4"></textarea></label><div class="err" id="ce"></div><button class="btn b" type="submit">Send</button></form></div></div></div></section>
+
+<section class="pg" id="join"><div class="wrap"><h2>Join GANHeP</h2><p>Anyone may apply. Applications are reviewed and approved by GANHeP administrators.</p>
+<div class="card"><form id="f" novalidate></form></div></div></section>
+
+<section class="pg" id="done"><div class="wrap"><div class="card" style="text-align:center"><h2 style="display:inline-block">Registration received ✓</h2><p>Thank you. Your application is <b>pending approval</b> by GANHeP administrators.</p><p>Reference: <b id="ref"></b></p><a class="btn b" href="#home">Back to home</a></div></div></section>
+
+<footer><div class="wrap"><div><b>GANHeP</b><br>Ghana Adventist Natural Health Practitioners<br>© <span id="yr"></span> All rights reserved.</div><div>Quick links:<br><a href="#about">About</a> · <a href="#programmes">Programmes</a> · <a href="#contact">Contact</a> · <a href="#join">Join</a></div></div></footer>
+<script>
+
+const ENDPOINT="/api/register";
+const F=[["Personal Information",[["regDate","Registration date","date",1],["fullName","Full name","text",1],["gender","Gender","select:Male,Female",1],["dob","Date of birth","date",1],["phone","Phone number","tel",1],["email","Email","email",1],["address","Residence / town","text",1]]],
+["Professional Information",[["qualification","Qualification / training","text",1],["specialty","Area of practice","select:Naturopathy,Herbal medicine,Hydrotherapy,Nutrition & lifestyle,Nursing,Allied health,Other",1],["years","Years of experience","number",1],["workplace","Clinic / workplace","text",0],["licence","Professional licence no.","text",0]]],
+["Church Information",[["church","Local church","text",1],["district","District / Conference","text",1],["mstatus","Membership status","select:Baptised SDA member,Not yet baptised",1],["office","Church office held","text",0],["pastor","Pastor / elder referee","text",1]]]];
+const $=s=>document.querySelector(s),today=()=>new Date().toISOString().slice(0,10),ALL=F.flatMap(s=>s[1]);
+const pages=[...document.querySelectorAll("section.pg")].map(s=>s.id);
+function route(){const h=(location.hash||"#home").slice(1);const id=pages.includes(h)?h:"home";pages.forEach(p=>$("#"+p).classList.toggle("on",p===id));document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+id&&!a.classList.contains("join")));$("#nav").classList.remove("open");scrollTo(0,0)}
+addEventListener("hashchange",route);route();$("#mb").onclick=()=>$("#nav").classList.toggle("open");$("#yr").textContent=new Date().getFullYear();
+
+const fld=f=>{const [k,l,t,r]=f;const c=t.startsWith("select:")?`<select name="${k}"><option value="">Select…</option>${t.slice(7).split(",").map(o=>`<option>${o}</option>`).join("")}</select>`:`<input name="${k}" type="${t}"${k==="regDate"?` value="${today()}"`:""}${k==="dob"?` max="${today()}"`:""}${t==="number"?' min="0" max="70"':""}>`;return `<div><label>${l}${r?" <i>*</i>":""}${c}</label><div class="err" data-e="${k}"></div></div>`};
+$("#f").innerHTML=F.map(s=>`<h3>${s[0]}</h3><div class="fg">${s[1].map(fld).join("")}</div>`).join("")+`<label style="font-weight:400"><input type="checkbox" name="agree" style="width:auto"> I confirm the information is true and agree to GANHeP storing it for membership administration. <i>*</i></label><div class="err" data-e="agree"></div><div class="err" id="fe"></div><p><button class="btn b" type="submit">Submit registration</button></p>`;
+$("#f").onsubmit=async e=>{e.preventDefault();const f=e.target;let ok=true,v={};f.querySelectorAll("[data-e]").forEach(x=>x.textContent="");f.querySelectorAll(".bad").forEach(x=>x.classList.remove("bad"));
+for(const [k,,,r] of ALL){const el=f.elements[k],val=el.value.trim();v[k]=val;let m="";if(r&&!val)m="Required";else if(k==="email"&&val&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val))m="Enter a valid email";else if(k==="phone"&&val&&!/^\+?[0-9\s-]{9,15}$/.test(val))m="Enter a valid phone number";else if(k==="dob"&&val>today())m="Date cannot be in the future";if(m){ok=false;el.classList.add("bad");f.querySelector(`[data-e="${k}"]`).textContent=m}}
+if(!f.elements.agree.checked){ok=false;f.querySelector('[data-e="agree"]').textContent="Please confirm to continue"}
+if(!ok){f.querySelector(".bad")?.scrollIntoView({block:"center"});return}
+if(ENDPOINT){try{const r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(v)});if(!r.ok)throw 0;const j=await r.json();$("#ref").textContent=j.reference||""}catch(x){$("#fe").textContent="Sorry, we could not submit your registration. Please try again.";return}}
+
+f.reset();location.hash="#done"};
+$("#cf").onsubmit=e=>{e.preventDefault();const f=e.target;$("#ce").textContent=(!f.n.value.trim()||!f.m.value.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.e.value))?"Please enter your name, a valid email and a message.":"Message form will work once the server is connected."};
+
+const esc=x=>String(x??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const para=t=>esc(t).split(/\n+/).map(p=>`<p>${p}</p>`).join("");
+fetch("/api/content").then(r=>r.json()).then(c=>{
+$("#c-mission").textContent=c.mission;$("#c-vision").textContent=c.vision;
+$("#c-about").innerHTML=`<div class="grid"><div class="card"><h3>Who we are</h3>${para(c.whoWeAre)}</div><div class="card"><h3>What we do</h3>${para(c.whatWeDo)}</div><div class="card"><h3>Affiliation</h3>${para(c.affiliation)}</div></div>`;
+$("#c-leadership").innerHTML=`<div class="grid">${c.leaders.map(l=>`<div class="card">${l.photo?`<img src="${esc(l.photo)}" alt="" style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin-bottom:10px">`:'<div class="av">👤</div>'}<h3>${esc(l.name)}</h3><div class="ph">${esc(l.role)}</div></div>`).join("")}</div>`;
+$("#c-programmes").innerHTML=`<div class="grid">${c.programmes.map(p=>`<div class="card"><h3>${esc(p.title)}</h3>${para(p.body)}</div>`).join("")}</div>`;
+$("#c-news").innerHTML=`<div class="grid">${c.news.length?c.news.map(n=>`<div class="card"><small class="ph">${esc(n.date)}</small><h3>${esc(n.title)}</h3>${para(n.body)}</div>`).join(""):'<p class="ph">No news yet.</p>'}</div>`;
+$("#c-resources").innerHTML=`<div class="grid">${c.resources.map(r=>`<div class="card"><h3>${esc(r.title)}</h3>${/^https?:\/\//.test(r.url)?`<a href="${esc(r.url)}" target="_blank" rel="noopener">Open / download</a>`:""}</div>`).join("")}</div>`;
+$("#c-contact").innerHTML=esc(c.contact.address)+"<br>"+esc(c.contact.phone)+"<br>"+esc(c.contact.email);
+}).catch(()=>{});
+</script></body></html>
