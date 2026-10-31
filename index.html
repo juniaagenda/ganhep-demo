@@ -29,6 +29,7 @@ label{font-size:14px;font-weight:600;display:block}label i{color:#b3261e;font-st
 input,select,textarea{width:100%;padding:10px;border:1px solid var(--bd);border-radius:8px;font:inherit;margin-top:4px;background:#fff;color:var(--tx)}
 .err{color:#b3261e;font-size:12px}.bad{border-color:#b3261e!important}.note{background:#eaf6ef;border-left:4px solid var(--gold);padding:10px 14px;border-radius:6px;font-size:14px}
 footer{background:var(--navy);color:#dbe4f5;padding:28px 0;font-size:14px}footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between}footer a{color:#fff}
+.wrap2{max-width:1040px;margin:16px auto 0;padding:0 16px}.wrap2:empty{display:none}.wrap2 b{display:block;margin-top:6px}.pills{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px}.pill{display:inline-block;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.45);border-radius:20px;padding:6px 14px;text-decoration:none;font-size:14px}.pill:hover{background:var(--gold);border-color:var(--gold)}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><symbol id="logo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="#0a2f6b" stroke="#2fae66" stroke-width="4"/><path d="M20 62c10-6 22-6 30 0 8-6 20-6 30 0v6c-10-5-22-5-30 1-8-6-20-6-30-1z" fill="#fff"/><path d="M50 62V38" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M50 52c-14 0-20-9-20-18 12 0 20 6 20 18z" fill="#6fdc9a"/><path d="M50 44c11 0 17-7 17-15-10 0-17 5-17 15z" fill="#3fb36b"/><circle cx="50" cy="22" r="4" fill="#fff"/></symbol></svg>
 <div class="top"><div class="wrap"><span>Whole-person healing · Service · Fellowship</span><a href="/admin.html" style="color:#fff;opacity:.7">Admin login</a></div></div>
@@ -58,7 +59,7 @@ footer{background:var(--navy);color:#dbe4f5;padding:28px 0;font-size:14px}footer
 
 <section class="pg" id="done"><div class="wrap"><div class="card" style="text-align:center"><h2 style="display:inline-block">Registration received ✓</h2><p>Thank you. Your application is <b>pending approval</b> by GANHeP administrators.</p><p>Reference: <b id="ref"></b></p><a class="btn b" href="#home">Back to home</a></div></div></section>
 
-<footer><div class="wrap"><div><b>GANHeP</b><br>Ghana Adventist Natural Health Practitioners<br>© <span id="yr"></span> All rights reserved.</div><div>Quick links:<br><a href="#about">About</a> · <a href="#programmes">Programmes</a> · <a href="#contact">Contact</a> · <a href="#join">Join</a></div><div id="c-links"></div></div></footer>
+<footer><div class="wrap"><div><b>GANHeP</b><br>Ghana Adventist Natural Health Practitioners<br>© <span id="yr"></span> All rights reserved.</div><div>Quick links:<br><a href="#about">About</a> · <a href="#programmes">Programmes</a> · <a href="#contact">Contact</a> · <a href="#join">Join</a></div></div><div class="wrap2" id="c-links"></div></footer>
 <script>
 
 const ENDPOINT="/api/register";
@@ -84,6 +85,11 @@ $("#cf").onsubmit=e=>{e.preventDefault();const f=e.target;$("#ce").textContent=(
 const esc=x=>String(x??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const para=t=>esc(t).split(/\n+/).map(p=>`<p>${p}</p>`).join("");
 fetch("/api/content").then(r=>r.json()).then(c=>{
+try{const fix=u=>{u=String(u||"").trim();if(!u)return"";if(/^(https?:\/\/|mailto:|tel:)/i.test(u))return u;return/^[\w.-]+\.[a-z]{2,}/i.test(u)?"https://"+u:""};
+const ic=t=>{t=t.toLowerCase();const m=[["facebook","📘"],["youtube","▶️"],["whatsapp","💬"],["wa.me","💬"],["instagram","📸"],["twitter","🐦"],["x.com","🐦"],["tiktok","🎵"],["linkedin","💼"],["telegram","✈️"]].find(k=>t.includes(k[0]));return m?m[1]:"🔗"};
+const pills=a=>(a||[]).map(x=>({l:x.label||"",u:fix(x.url)})).filter(x=>x.u).map(x=>`<a class="pill" href="${esc(x.u)}" target="_blank" rel="noopener">${ic(x.l+x.u)} ${esc(x.l||x.u)}</a>`).join("");
+const so=pills(c.social),ot=pills(c.links);
+$("#c-links").innerHTML=(so?`<b>Follow us</b><div class="pills">${so}</div>`:"")+(ot?`<b>Useful links</b><div class="pills">${ot}</div>`:"")}catch(x){}
 $("#c-mission").textContent=c.mission;$("#c-vision").textContent=c.vision;
 $("#c-about").innerHTML=`<div class="grid"><div class="card"><h3>Who we are</h3>${para(c.whoWeAre)}</div><div class="card"><h3>What we do</h3>${para(c.whatWeDo)}</div><div class="card"><h3>Affiliation</h3>${para(c.affiliation)}</div></div>`;
 $("#c-leadership").innerHTML=`<div class="grid">${c.leaders.map(l=>`<div class="card">${l.photo?`<img src="${esc(l.photo)}" alt="" style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin-bottom:10px">`:'<div class="av">👤</div>'}<h3>${esc(l.name)}</h3><div class="ph">${esc(l.role)}</div></div>`).join("")}</div>`;
@@ -91,7 +97,5 @@ $("#c-programmes").innerHTML=`<div class="grid">${c.programmes.map(p=>`<div clas
 $("#c-news").innerHTML=`<div class="grid">${c.news.length?c.news.map(n=>`<div class="card"><small class="ph">${esc(n.date)}</small><h3>${esc(n.title)}</h3>${para(n.body)}</div>`).join(""):'<p class="ph">No news yet.</p>'}</div>`;
 $("#c-resources").innerHTML=`<div class="grid">${c.resources.map(r=>`<div class="card"><h3>${esc(r.title)}</h3>${r.fileId?`<p><a href="/api/file/${esc(r.fileId)}" target="_blank" rel="noopener">📄 ${esc(r.fileName||"Download file")}</a></p>`:""}${/^https?:\/\//.test(r.url)?`<p><a href="${esc(r.url)}" target="_blank" rel="noopener">🔗 Open link</a></p>`:""}</div>`).join("")||'<p class="ph">No resources yet.</p>'}</div>`;
 $("#c-contact").innerHTML=esc(c.contact.address)+"<br>"+esc(c.contact.phone)+"<br>"+esc(c.contact.email);
-const ln=(t,a)=>a.filter(x=>/^https?:\/\//.test(x.url)).map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label)}</a>`).join(" · ");
-$("#c-links").innerHTML=[["Follow us",c.social],["Useful links",c.links]].map(([h,a])=>ln(h,a||[])?`${h}:<br>${ln(h,a)}<br>`:"").join("");
 }).catch(()=>{});
 </script></body></html>
