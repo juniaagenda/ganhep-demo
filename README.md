@@ -14,7 +14,8 @@ Files: index.html (public site) · admin.html (admin login, members, site conten
 ## Try it
 1. Open the site > Join GANHeP > submit a test registration.
 2. /admin.html > Members: Approve it (a Member ID like GANHeP-2026-0001 is created), try Edit, PDF, Export Excel.
-3. /admin.html > Site content: change the mission, add a leader with a photo, add a news item > Save. Refresh the public site.
+3. /admin.html > Site content: change the mission, add a leader with a photo, add a news item, add a resource and upload a PDF to it (max 4 MB; PDF, Word, Excel, PowerPoint, JPG, PNG), add social media and other links > Save & publish. Refresh the public site.
+4. Uploaded files are stored on the server and only kept if the resource that uses them is saved.
 
 ## Demo limits (to fix in the full build)
 - One shared admin password, not individual accounts or roles.
